@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: prod
+      discovery:
+        enabled: true
+        service-id: config-service
+eureka:
+  client:
+    serviceUrl:
+      register-with-eureka: true
+      fetch-registry: true
+  instance:
+    preferIpAddress: true
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8068
